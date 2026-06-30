@@ -5,15 +5,11 @@
       <stop offset="100%" stop-color="#FF3C00" />
     </linearGradient>
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#FF6A00" flood-opacity="0.5"/>
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2.5" flood-color="#FF6A00" flood-opacity="0.5"/>
     </filter>
   </defs>
 
-  <!-- Background circle for perfect contrast on both light and dark browser tabs -->
-  <circle cx="50" cy="50" r="46" fill="#0A0A0B" stroke="url(#phoenix-grad)" stroke-width="4"/>
-
-  <!-- Logo path scaled and centered inside the circle -->
-  <g filter="url(#glow)" stroke="url(#phoenix-grad)" stroke-width="5.5" stroke-linejoin="miter" stroke-linecap="butt" transform="translate(16, 16) scale(0.68)">
+  <g filter="url(#glow)" stroke="url(#phoenix-grad)" stroke-width="5.5" stroke-linejoin="miter" stroke-linecap="butt">
     <!-- Eye -->
     <rect x="66" y="12" width="5" height="5" fill="url(#phoenix-grad)" stroke="none" />
     
