@@ -1,0 +1,333 @@
+@import "tailwindcss";
+@import '@fontsource/space-grotesk/400.css';
+@import '@fontsource/space-grotesk/700.css';  
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/jetbrains-mono/400.css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --color-primary: #10B981; /* Emerald Green */
+  --color-primary-glow: rgba(16, 185, 129, 0.4);
+  --color-bg: #F8FAFC;
+  --color-text: #050505;
+  --color-slate: #64748B;
+  --color-panel: rgba(255, 255, 255, 0.6);
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-accent-blue: #3B82F6;
+  --color-accent-amber: #F59E0B;
+}
+
+.dark {
+  --color-primary: #FF5A1F; /* Phoenix Orange */
+  --color-primary-glow: rgba(255, 90, 31, 0.4);
+  --color-bg: #050505;
+  --color-text: #F8FAFC;
+  --color-slate: #94A3B8;
+  --color-panel: rgba(15, 15, 16, 0.4);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-accent-blue: #3B82F6;
+  --color-accent-amber: #F59E0B;
+}
+
+@theme {
+  --font-sans: "Inter", "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Theme-Aware Semantic Palette */
+  --color-brand-primary: var(--color-primary);
+  --color-brand-bg: var(--color-bg);
+  --color-brand-text: var(--color-text);
+  --color-brand-slate: var(--color-slate);
+  --color-brand-white: #F8FAFC;
+  --color-brand-black: #050505;
+  --color-brand-blue: var(--color-accent-blue);
+  --color-brand-amber: var(--color-accent-amber);
+  
+  /* Static Utility Colors */
+  --color-brand-orange-static: #FF5A1F;
+  --color-brand-green-static: #10B981;
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-[var(--color-panel)] backdrop-blur-xl border border-[var(--color-border)];
+  }
+  .text-glow-primary {
+    text-shadow: 0 0 20px var(--color-primary-glow);
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-text via-brand-text/90 to-brand-text/70;
+  }
+  .gradient-primary {
+    @apply bg-gradient-to-br from-brand-primary to-emerald-700 dark:to-orange-700;
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-slate);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* 3D Rotating Wireframe Sphere */
+.wireframe-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.wireframe-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-primary);
+  opacity: 0.15;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+.ring-x {
+  animation: rotateSphereX 10s linear infinite;
+}
+
+.ring-y {
+  animation: rotateSphereY 12s linear infinite;
+}
+
+.ring-z {
+  animation: rotateSphereZ 14s linear infinite;
+}
+
+@keyframes rotateSphereX {
+  0% {
+    transform: translate(-50%, -50%) rotateX(0deg) rotateY(45deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateX(360deg) rotateY(45deg);
+  }
+}
+
+@keyframes rotateSphereY {
+  0% {
+    transform: translate(-50%, -50%) rotateX(45deg) rotateY(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateX(45deg) rotateY(360deg);
+  }
+}
+
+@keyframes rotateSphereZ {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg) rotateX(60deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg) rotateX(60deg);
+  }
+}
+
+/* Orbiting Dots */
+@keyframes orbit-elliptical {
+  0% {
+    transform: translate(0px, -55px) scale(1.1);
+  }
+  25% {
+    transform: translate(95px, 0px) scale(0.85);
+  }
+  50% {
+    transform: translate(0px, 55px) scale(0.65);
+  }
+  75% {
+    transform: translate(-95px, 0px) scale(0.85);
+  }
+  100% {
+    transform: translate(0px, -55px) scale(1.1);
+  }
+}
+
+.animate-orbit-dot-1 {
+  animation: orbit-elliptical 4.5s linear infinite;
+}
+
+.animate-orbit-dot-2 {
+  animation: orbit-elliptical 5.5s linear infinite;
+  animation-delay: -1.3s;
+}
+
+.animate-orbit-dot-3 {
+  animation: orbit-elliptical 6.5s linear infinite;
+  animation-delay: -2.8s;
+}
+
+.animate-orbit-dot-4 {
+  animation: orbit-elliptical 5s linear infinite reverse;
+  animation-delay: -0.9s;
+}
+
+/* Problem Section Glitch & Rotating Conic-Gradient Border */
+@keyframes glitch {
+  0%, 100% {
+    text-shadow: 0 0 0 transparent;
+  }
+  30% {
+    text-shadow: -2px 0 0 rgba(239, 68, 68, 0.8), 1px 0 0 rgba(239, 68, 68, 0.4);
+  }
+  70% {
+    text-shadow: 2px 0 0 rgba(239, 68, 68, 0.8), -1px 0 0 rgba(239, 68, 68, 0.4);
+  }
+}
+
+.glitch-title:hover {
+  animation: glitch 200ms ease-in-out infinite;
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes spin-border {
+  0% {
+    --border-angle: 0deg;
+  }
+  100% {
+    --border-angle: 360deg;
+  }
+}
+
+.border-gradient-card {
+  position: relative;
+}
+
+.border-gradient-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px; /* border thickness */
+  background: conic-gradient(from var(--border-angle, 0deg), #ef4444 0%, transparent 60%, transparent 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.border-gradient-card:hover::before {
+  opacity: 0.8;
+  animation: spin-border 2s linear infinite;
+}
+
+/* Portfolio scan line and scroll-snap custom styles */
+@keyframes portfolio-scan {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-portfolio-scan {
+  animation: portfolio-scan 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Custom scrollbars for case studies horizontal scroll */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Premium Pricing rotating border and shimmer */
+.premium-border-ring {
+  position: relative;
+}
+
+.premium-border-ring::before {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  border-radius: inherit;
+  padding: 2.5px; /* border thickness */
+  background: conic-gradient(from var(--border-angle, 0deg), #ef4444 0%, #3b82f6 50%, #ef4444 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 2;
+  pointer-events: none;
+  animation: spin-border 4s linear infinite;
+}
+
+@keyframes shimmer-gpu {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.animate-shimmer-gpu {
+  animation: shimmer-gpu 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+

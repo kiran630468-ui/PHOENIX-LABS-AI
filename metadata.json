@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Phoenix Labs | AI-Powered Digital Growth Partner",
+  "description": "Premium AI-native digital systems for high-growth businesses. We build the future of healthcare, fitness, and luxury local business growth.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
