@@ -1,18 +1,19 @@
 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="phoenix-grad" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stopColor="#FF6A00" />
-      <stop offset="1" stopColor="#FF3C00" />
+      <stop offset="0%" stop-color="#FF6A00" />
+      <stop offset="100%" stop-color="#FF3C00" />
     </linearGradient>
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#FF6A00" floodOpacity="0.4"/>
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#FF6A00" flood-opacity="0.5"/>
     </filter>
   </defs>
 
-  <!-- Background circle for perfect visibility on dark/light tabs -->
-  <circle cx="50" cy="50" r="46" fill="#000000" stroke="url(#phoenix-grad)" stroke-width="3"/>
+  <!-- Background circle for perfect contrast on both light and dark browser tabs -->
+  <circle cx="50" cy="50" r="46" fill="#0A0A0B" stroke="url(#phoenix-grad)" stroke-width="4"/>
 
-  <g filter="url(#glow)" stroke="url(#phoenix-grad)" stroke-width="4.5" stroke-linejoin="miter" stroke-linecap="butt" transform="scale(0.68) translate(23.5, 23.5)">
+  <!-- Logo path scaled and centered inside the circle -->
+  <g filter="url(#glow)" stroke="url(#phoenix-grad)" stroke-width="5.5" stroke-linejoin="miter" stroke-linecap="butt" transform="translate(16, 16) scale(0.68)">
     <!-- Eye -->
     <rect x="66" y="12" width="5" height="5" fill="url(#phoenix-grad)" stroke="none" />
     
