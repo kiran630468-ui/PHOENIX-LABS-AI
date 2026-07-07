@@ -9,6 +9,7 @@ export default function TransformationSection() {
           <motion.span 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
             className="text-brand-primary font-mono text-sm tracking-[0.3em] uppercase mb-4 block"
           >
             The Evolution
@@ -16,6 +17,7 @@ export default function TransformationSection() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="text-4xl md:text-6xl font-display font-bold mb-8 text-brand-text leading-tight"
           >
             FROM OUTDATED TO <br />
@@ -28,6 +30,7 @@ export default function TransformationSection() {
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             className="p-10 rounded-[40px] bg-brand-text/[0.02] border border-brand-text/5 relative flex flex-col glass-panel"
           >
             <div className="absolute top-6 right-8 text-brand-slate/20 font-display text-6xl font-black italic">BEFORE</div>
@@ -61,6 +64,7 @@ export default function TransformationSection() {
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             className="p-10 rounded-[40px] gradient-primary relative text-white flex flex-col shadow-[0_40px_100px_var(--color-primary-glow)]"
           >
             <div className="absolute top-6 right-8 text-white/10 font-display text-6xl font-black italic">AFTER</div>

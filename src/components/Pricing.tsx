@@ -159,6 +159,7 @@ export default function Pricing() {
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="text-brand-primary font-mono text-sm tracking-[0.4em] uppercase mb-6 block"
           >
             Investment Architecture
@@ -166,6 +167,7 @@ export default function Pricing() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-8xl font-display font-black text-brand-text mb-8 leading-[0.9] uppercase"
           >
@@ -175,6 +177,7 @@ export default function Pricing() {
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-xl md:text-2xl text-brand-slate max-w-2xl mx-auto mb-12 font-medium"
           >
@@ -184,6 +187,7 @@ export default function Pricing() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6"
           >
@@ -225,6 +229,7 @@ export default function Pricing() {
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               className="p-10 rounded-[40px] glass-panel border-brand-text/5 hover:border-brand-primary/20 transition-all group"
             >
@@ -271,6 +276,7 @@ export default function Pricing() {
                   <motion.div 
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
                     className="mb-4 inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest text-white border border-white/20"
                   >
                     <Sparkles size={12} /> {plan.badge}
@@ -367,6 +373,7 @@ export default function Pricing() {
                 key={i}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
                 className="p-8 rounded-[32px] glass-panel border-brand-text/5 hover:bg-brand-text/[0.02] transition-all"
               >
                 <div className="text-brand-primary mb-5">{item.icon}</div>
@@ -487,6 +494,7 @@ export default function Pricing() {
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
             className="relative z-10"
           >
             <h2 className="text-5xl md:text-8xl font-display font-black mb-8 leading-[0.9] uppercase">

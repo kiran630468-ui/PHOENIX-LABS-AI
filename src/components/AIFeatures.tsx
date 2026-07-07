@@ -194,6 +194,7 @@ export default function AIFeatures() {
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
             className="flex items-center justify-center gap-2 mb-6"
           >
             <div className="h-[1px] w-12 bg-brand-text/10" />
@@ -239,6 +240,7 @@ export default function AIFeatures() {
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="text-lg md:text-xl text-brand-slate max-w-2xl mx-auto leading-relaxed"
           >
             Phoenix Labs integrates the latest AI primitives directly into your business infrastructure, 
@@ -262,6 +264,7 @@ export default function AIFeatures() {
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           className="mt-20 p-1 bg-gradient-to-r from-brand-primary/20 via-brand-blue/20 to-brand-primary/20 rounded-[40px]"
         >
           <div className="bg-brand-bg rounded-[39px] p-8 md:p-16 flex flex-col md:flex-row items-center gap-12">

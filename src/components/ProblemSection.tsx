@@ -119,6 +119,7 @@ export default function ProblemSection() {
             <motion.span 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
               className="text-brand-primary font-mono text-sm tracking-[0.3em] uppercase mb-4 block"
             >
               The Invisible Leak
@@ -144,6 +145,7 @@ export default function ProblemSection() {
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               className="text-lg text-brand-slate max-w-lg mb-12 leading-relaxed"
             >
               Most businesses lose 60% of potential high-ticket leads before they ever pick up the phone. 
@@ -153,6 +155,7 @@ export default function ProblemSection() {
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
               className="p-8 rounded-3xl glass-panel border-red-500/10 bg-red-500/[0.02]"
             >
               <TypewriterQuote text="We were losing patients to a newer clinic down the street simply because their website looked more 'modern'. We didn't realize how much our old site was hurting our credibility." />
@@ -172,6 +175,7 @@ export default function ProblemSection() {
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 className="p-8 rounded-3xl glass-panel hover:bg-white/[0.03] transition-all group border-white/5 border-gradient-card"
               >

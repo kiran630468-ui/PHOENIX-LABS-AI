@@ -93,6 +93,7 @@ export default function GrowthSystems() {
             <motion.span 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
               className="text-brand-primary font-mono text-sm tracking-[0.3em] uppercase mb-4 block"
             >
               Strategic Architecture
@@ -100,6 +101,7 @@ export default function GrowthSystems() {
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               className="text-4xl md:text-6xl font-display font-bold text-brand-text leading-[0.9]"
             >
               WE DON'T BUILD <br />

@@ -59,6 +59,7 @@ export default function Process() {
           <motion.span 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
             className="text-brand-primary font-mono text-sm tracking-[0.3em] uppercase mb-4 block"
           >
             Tactical Execution
@@ -66,6 +67,7 @@ export default function Process() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="text-4xl md:text-7xl font-display font-black text-brand-text leading-[0.9]"
           >
             A SYSTEMATIC <br />
@@ -80,6 +82,7 @@ export default function Process() {
               key={i}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               className="p-12 border-b border-r border-brand-text/5 hover:bg-brand-text/[0.02] transition-colors relative group font-sans"
             >

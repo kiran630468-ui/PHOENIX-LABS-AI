@@ -40,6 +40,7 @@ export default function CTA() {
             <motion.div 
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
               className="flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-8 border-brand-primary/20"
             >
               <Sparkles size={16} className="text-brand-primary" />
@@ -49,6 +50,7 @@ export default function CTA() {
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               className="text-4xl md:text-[80px] font-display font-black text-brand-text leading-[0.85] tracking-tighter mb-10 uppercase"
             >
               Your Competitors Are Already Online. <br />
@@ -58,6 +60,7 @@ export default function CTA() {
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               className="text-lg md:text-xl text-brand-slate max-w-2xl mb-12 leading-relaxed"
             >
               Build a premium online presence that converts visitors into paying customers. 
